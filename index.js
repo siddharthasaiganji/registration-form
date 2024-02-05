@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 app.post("/register", async (req, res) => {
     try{
         const {name, email, password} = req.body;
-
+//for check existing user
 const existingUser = await registration.findOne({email : email });
 if(!existingUser) {
     const registrationData = new registration({
